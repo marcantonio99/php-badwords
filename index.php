@@ -9,7 +9,7 @@ tu che angeliche voci annunziar
 luce dona alle menti,
 pace infondi nei cuor.';
 
-var_dump( strlen($paragraph) );
+$word= $_GET['word'];
 
 ?>
 
@@ -23,5 +23,17 @@ var_dump( strlen($paragraph) );
 </head>
 <body>
     <p><?php echo $paragraph ?></p>
+    <pre><?php var_dump( strlen($paragraph) ) ?></pre>
+    <h3>Inserisci una parola che vuoi censurare</h3>
+
+    <form action="" method="GET">
+        <div>
+        <input type="text" name="word" id="">
+        </div>
+    </form>
+
+    <p><?php echo str_replace($word, "***", $paragraph);  ?></p>
+    <pre><?php var_dump( strlen($paragraph) ) ?></pre>
+
 </body>
 </html>
